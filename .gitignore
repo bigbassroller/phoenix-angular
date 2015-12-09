@@ -15,4 +15,6 @@ erl_crash.dump
 # variables.
 /config/prod.secret.exs
 
-/AngularJS by Example
+.DS_Store
+/__examples
+/node_modules
