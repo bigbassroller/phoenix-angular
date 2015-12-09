@@ -1,0 +1,42 @@
+{
+  "name": "phoenix-angular",
+  "version": "1.0.0",
+  "description": "Phoenix and Angular stack.",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-animate": "^1.4.8",
+    "angular-aria": "^1.4.8",
+    "angular-material": "http://github.com/angular/bower-material/tarball/master",
+    "del": "^2.2.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigbassroller/phoenix-angular.git"
+  },
+  "keywords": [
+    "Phoenix",
+    "Elixir",
+    "Erlang",
+    "Angular",
+    "JavaScript",
+    "Sass",
+    "Material",
+    "Design",
+    "Bootstrap."
+  ],
+  "author": "Michael Chavez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigbassroller/phoenix-angular/issues"
+  },
+  "homepage": "https://github.com/bigbassroller/phoenix-angular#readme"
+}
