@@ -13,9 +13,9 @@ Gulp.task('webpack', function (callback) {
     var config = {
         watch: global.isWatching,
         entry: {
-            angular: './node_modules/angular/angular.js'
-            // admin: './client/pages/admin/index',
-            // contact: './client/pages/contact/index',
+            angular: './node_modules/angular/angular.js',
+            app: './app/js/app.js',
+            workout: './app/js/7MinWorkout/workout.js'
             // login: './client/pages/login/index',
             // signup: './client/pages/signup/index'
         },
@@ -32,11 +32,7 @@ Gulp.task('webpack', function (callback) {
                 { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader' }
             ]
         },
-        devtool: 'source-map',
-        plugins: [
-            new CommonsChunkPlugin('../core.min.js', undefined, 2),
-            new UglifyJsPlugin({ compress: { warnings: false } })
-        ]
+        devtool: 'source-map'
     };
 
     Webpack(config, function (err, stats) {
