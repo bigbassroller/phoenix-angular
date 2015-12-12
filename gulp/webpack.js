@@ -13,9 +13,9 @@ Gulp.task('webpack', function (callback) {
     var config = {
         watch: global.isWatching,
         entry: {
-            angular: './node_modules/angular/angular.js',
-            app: './app/js/app.js',
-            workout: './app/js/7MinWorkout/workout.js'
+            // angular: './node_modules/angular/angular.js',
+            // app: './app/js/app.js',
+            // workout: './app/js/7MinWorkout/workout.js'
             // login: './client/pages/login/index',
             // signup: './client/pages/signup/index'
         },

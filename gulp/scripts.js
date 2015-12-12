@@ -11,9 +11,13 @@ Gulp.task('scripts', function () {
       dest: './priv/static/js',
       outputName: 'angular.js'
   },{
-      entries: './app/js/appfoo.js',
+      entries: './node_modules/angular-route/angular-route.js',
       dest: './priv/static/js',
-      outputName: 'appfoo.js'
+      outputName: 'angular-route.js'
+  },{
+      entries: './app/js/app.js',
+      dest: './priv/static/js',
+      outputName: 'app.js'
   }, {
       entries: './app/js/7MinWorkout/workout.js',
       dest: './priv/static/js',

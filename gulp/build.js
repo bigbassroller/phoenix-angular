@@ -1,4 +1,4 @@
 var Gulp = require('gulp');
 
 
-Gulp.task('build', ['sass', 'media']);
+Gulp.task('build', ['sass', 'scripts', 'html']);
