@@ -22,6 +22,10 @@ Gulp.task('scripts', function () {
       entries: './app/js/7MinWorkout/workout.js',
       dest: './priv/static/js',
       outputName: 'workout.js'
+  }, {
+      entries: './app/js/7MinWorkout/filters.js',
+      dest: './priv/static/js',
+      outputName: 'filters.js'
   }];
 
   return bundleConfigs.map(function (bundleConfig) {
