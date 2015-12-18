@@ -9,7 +9,7 @@ defmodule PhoenixAngular.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :phoenix_angular, gzip: false,
-    only: ~w(css fonts images img js favicon.ico robots.txt partials)
+    only: ~w(css fonts images img js favicon.ico robots.txt partials content)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

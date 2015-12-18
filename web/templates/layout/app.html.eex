@@ -23,9 +23,11 @@
     </div>
     <script src="<%= static_path(@conn, "/js/angular.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/angular-route.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/angular-sanitize.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/workout.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/filters.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/angular-media-player.js") %>"></script>
     <%= render_existing view_module(@conn), "feet.html", assigns %>
 </body>
 </html>

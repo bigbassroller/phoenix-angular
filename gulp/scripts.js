@@ -15,7 +15,7 @@ Gulp.task('scripts', function () {
       dest: './priv/static/js',
       outputName: 'angular-route.js'
   },{
-      entries: './node_modules/angular-sanitize/angular-sanitize.js',
+      entries: './node_modules/angular-route/angular-sanitize.js',
       dest: './priv/static/js',
       outputName: 'angular-sanitize.js'
   },{
@@ -30,6 +30,10 @@ Gulp.task('scripts', function () {
       entries: './app/js/7MinWorkout/filters.js',
       dest: './priv/static/js',
       outputName: 'filters.js'
+  }, {
+      entries: './bower_components/angular-media-player/dist/angular-media-player.js',
+      dest: './priv/static/js',
+      outputName: 'angular-media-player.js'
   }];
 
   return bundleConfigs.map(function (bundleConfig) {
