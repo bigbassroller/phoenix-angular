@@ -27,6 +27,7 @@
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/workout.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/filters.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/angular-media-player.js") %>"></script>
     <%= render_existing view_module(@conn), "feet.html", assigns %>
 </body>
 </html>
