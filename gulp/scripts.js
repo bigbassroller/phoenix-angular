@@ -30,6 +30,10 @@ Gulp.task('scripts', function () {
       entries: './app/js/app.js',
       dest: './priv/static/js',
       outputName: 'app.js'
+  },{
+      entries: './app/js/root.js',
+      dest: './priv/static/js',
+      outputName: 'root.js'
   }, {
       entries: './app/js/7MinWorkout/workout.js',
       dest: './priv/static/js',
@@ -38,6 +42,10 @@ Gulp.task('scripts', function () {
       entries: './app/js/7MinWorkout/filters.js',
       dest: './priv/static/js',
       outputName: 'filters.js'
+  }, {
+      entries: './app/js/7MinWorkout/services.js',
+      dest: './priv/static/js',
+      outputName: 'services.js'
   }, {
       entries: './app/js/7MinWorkout/workoutvideos.js',
       dest: './priv/static/js',

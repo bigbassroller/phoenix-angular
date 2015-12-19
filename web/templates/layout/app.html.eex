@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>" />
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/animate.css") %>" />
 </head>
-<body ng-app="app" ng-controller="WorkoutController">
+<body ng-app="app" ng-controller="RootController">
     <div class="navbar navbar-default navbar-fixed-top top-navbar">
         <div class="container app-container">
             <div class="navbar-header">
-                <h1>7 Minute Workout</h1>
+                <!--<h1>7 Minute Workout</h1>-->
+                <div class="navbar-brand">7 Minute Workout</div>
             </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-click="showWorkoutHistory()" title="Workout History">History</a></li>
+            </ul>
         </div>
     </div>
     <div class="container body-content app-container">
@@ -27,8 +31,10 @@
     <script src="<%= static_path(@conn, "/js/angular-sanitize.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/angular-animate.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/root.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/workout.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/filters.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/services.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/ui-bootstrap-tpls.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/workoutvideos.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/angular-media-player.js") %>"></script>
