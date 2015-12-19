@@ -31,6 +31,8 @@ angular.module('7minWorkout')
       }
 
       var restExercise;
+      var exerciseIntervalPromise;
+
       var startWorkout = function () {
           $scope.workoutPlan = createWorkout();
           $scope.workoutTimeRemaining = $scope.workoutPlan.totalWorkoutDuration();
@@ -43,9 +45,6 @@ angular.module('7minWorkout')
               }),
               duration: $scope.workoutPlan.restBetweenExercise
           };
-          $interval(function () {
-              $scope.workoutTimeRemaining = $scope.workoutTimeRemaining - 1;
-          }, 1000, $scope.workoutTimeRemaining);
 
           $scope.currentExerciseIndex = -1;
           startExercise($scope.workoutPlan.exercises[0]);
@@ -59,19 +58,10 @@ angular.module('7minWorkout')
               $scope.currentExerciseIndex++;
           }
 
-          $interval(function () {
-              ++$scope.currentExerciseDuration;
-          }, 1000, $scope.currentExercise.duration)
-          .then(function () {
-              var next = getNextExercise(exercisePlan);
-              if (next) {
-                  startExercise(next);
-              }
-              else {
-                  $location.path('/finish');
-              }
-          });
+          exerciseIntervalPromise = startExerciseTimeTracking();
+
       };
+
       var getNextExercise = function (currentExercisePlan) {
           var nextExercise = null;
           if (currentExercisePlan === restExercise) {
@@ -85,6 +75,50 @@ angular.module('7minWorkout')
           return nextExercise;
       };
 
+      $scope.pauseWorkout = function () {
+          $interval.cancel(exerciseIntervalPromise);
+          $scope.workoutPaused = true;
+      };
+
+      $scope.resumeWorkout = function () {
+          exerciseIntervalPromise = startExerciseTimeTracking();
+          $scope.workoutPaused = false;
+      };
+
+      $scope.pauseResumeToggle = function () {
+          if ($scope.workoutPaused) {
+              $scope.resumeWorkout();
+          }
+          else {
+              $scope.pauseWorkout();
+          }
+      }
+      
+      var startExerciseTimeTracking = function () {
+          var promise = $interval(function () {
+              ++$scope.currentExerciseDuration;
+              --$scope.workoutTimeRemaining;
+          }, 1000, $scope.currentExercise.duration - $scope.currentExerciseDuration);
+
+          promise.then(function () {
+              var next = getNextExercise($scope.currentExercise);
+              if (next) {
+                  startExercise(next);
+              }
+              else {
+                  $location.path('/finish');
+              }
+          }, function (error) {
+              console.log('Inteval promise cancelled. Error reason -' + error);
+          });
+          return promise;
+      }
+
+      $scope.onKeyPressed = function (event) {
+          if (event.which == 80 || event.which == 112) {        // 'p' or 'P' key to toggle pause and resume.
+              $scope.pauseResumeToggle();
+          }
+      };
       //$scope.$watch('currentExerciseDuration', function (nVal) {
       //    if (nVal == $scope.currentExercise.duration) {
       //        var next = getNextExercise($scope.currentExercise);
@@ -326,6 +360,21 @@ angular.module('7minWorkout')
               else if (newValue == $scope.currentExercise.duration - 3) {
                   $scope.aboutToCompleteAudio.play();
               }
+          }
+      });
+
+      $scope.$watch('workoutPaused', function (newValue, oldValue) {
+          if (newValue) {
+              $scope.ticksAudio.pause();
+              $scope.nextUpAudio.pause();
+              $scope.nextUpExerciseAudio.pause();
+              $scope.halfWayAudio.pause();
+              $scope.aboutToCompleteAudio.pause();
+          }
+          else {
+              $scope.ticksAudio.play();
+              if ($scope.halfWayAudio.currentTime > 0 && $scope.halfWayAudio.currentTime < $scope.halfWayAudio.duration) $scope.halfWayAudio.play();
+              if ($scope.aboutToCompleteAudio.currentTime > 0 && $scope.aboutToCompleteAudio.currentTime < $scope.aboutToCompleteAudio.duration) $scope.aboutToCompleteAudio.play();
           }
       });
 
