@@ -15,9 +15,17 @@ Gulp.task('scripts', function () {
       dest: './priv/static/js',
       outputName: 'angular-route.js'
   },{
-      entries: './node_modules/angular-route/angular-sanitize.js',
+      entries: './node_modules/angular-sanitize/angular-sanitize.js',
       dest: './priv/static/js',
       outputName: 'angular-sanitize.js'
+  },{
+      entries: './node_modules/angular-animate/angular-animate.js',
+      dest: './priv/static/js',
+      outputName: 'angular-animate.js'
+  },{
+      entries: './node_modules/animate/index.js',
+      dest: './priv/static/js',
+      outputName: 'animate.js'
   },{
       entries: './app/js/app.js',
       dest: './priv/static/js',

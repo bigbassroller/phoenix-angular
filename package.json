@@ -13,6 +13,7 @@
     "angular-material": "http://github.com/angular/bower-material/tarball/master",
     "angular-route": "^1.4.8",
     "angular-sanitize": "^1.4.8",
+    "animate": "0.0.5",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
