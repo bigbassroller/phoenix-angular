@@ -23,6 +23,10 @@ Gulp.task('scripts', function () {
       dest: './priv/static/js',
       outputName: 'angular-animate.js'
   },{
+      entries: './node_modules/angular-local-storage/dist/angular-local-storage.js',
+      dest: './priv/static/js',
+      outputName: 'angular-local-storage.js'
+  },{
       entries: './node_modules/animate/index.js',
       dest: './priv/static/js',
       outputName: 'animate.js'

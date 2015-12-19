@@ -30,6 +30,7 @@
     <script src="<%= static_path(@conn, "/js/angular-route.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/angular-sanitize.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/angular-animate.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/angular-local-storage.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/root.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/workout.js") %>"></script>

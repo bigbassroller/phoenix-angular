@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('7minWorkout')
-  .controller('WorkoutController', ['$scope', '$interval', '$location', 'workoutHistoryTracker', function ($scope, $interval, $location, workoutHistoryTracker) {
+  .controller('WorkoutController', ['$scope', '$interval', '$location', 'workoutHistoryTracker', 'appEvents', function ($scope, $interval, $location, workoutHistoryTracker, appEvents) {
       function WorkoutPlan(args) {
           this.exercises = [];
           this.name = args.name;
@@ -57,6 +57,7 @@ angular.module('7minWorkout')
 
           if (exercisePlan.details.name != 'rest') {
               $scope.currentExerciseIndex++;
+              $scope.$emit(appEvents.workout.exerciseStarted, exercisePlan.details);
           }
 
           exerciseIntervalPromise = startExerciseTimeTracking();
