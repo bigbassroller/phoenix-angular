@@ -31,9 +31,17 @@ Gulp.task('scripts', function () {
       dest: './priv/static/js',
       outputName: 'filters.js'
   }, {
+      entries: './app/js/7MinWorkout/workoutvideos.js',
+      dest: './priv/static/js',
+      outputName: 'workoutvideos.js'
+  }, {
       entries: './bower_components/angular-media-player/dist/angular-media-player.js',
       dest: './priv/static/js',
       outputName: 'angular-media-player.js'
+  }, {
+      entries: './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      dest: './priv/static/js',
+      outputName: 'ui-bootstrap-tpls.js'
   }];
 
   return bundleConfigs.map(function (bundleConfig) {

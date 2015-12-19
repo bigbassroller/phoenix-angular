@@ -18,6 +18,7 @@ erl_crash.dump
 .DS_Store
 /__examples
 /node_modules
+/bower_components
 /priv/static
 /priv/static/js
 .gitignore

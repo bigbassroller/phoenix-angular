@@ -1,0 +1,33 @@
+{
+  "name": "phoenix-angular",
+  "description": "Phoenix and Angular stack.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Michael Chavez"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Phoenix",
+    "Elixir",
+    "Erlang",
+    "Angular",
+    "JavaScript",
+    "Sass",
+    "Material",
+    "Design",
+    "Bootstrap."
+  ],
+  "homepage": "https://github.com/bigbassroller/phoenix-angular",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.14.3",
+    "angular-media-player": "~0.5.8"
+  }
+}
